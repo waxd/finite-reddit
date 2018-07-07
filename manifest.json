@@ -5,6 +5,11 @@
 
     "description": "Removes all content after 100 posts.",
 
+    "icons": {
+	"48": "icons/finite-reddit-48.png",
+	"96": "icons/finite-reddit-96.png"
+    },
+
     "content_scripts": [
 	{
 	    "matches": ["*://*.reddit.com/*"],
