@@ -4,6 +4,7 @@
     "version": "0.1",
 
     "description": "Removes all content after 100 posts.",
+    "permissions": ["storage"],
 
     "icons": {
 	"48": "icons/finite-reddit-48.png",
@@ -15,5 +16,17 @@
 	    "matches": ["*://*.reddit.com/*"],
 	    "js": ["end-reddit.js"]
 	}
-    ]
+    ],
+
+    "browser_action": {
+	"default_icon": "icons/finite-reddit-32.png",
+	"default_title": "Finite Reddit",
+	"default_popup": "popup-menu/menu.html"
+    },
+
+    "applications": {
+	"gecko": {
+	    "id": "waxd@waxd.xyz"
+	}
+    }
 }
