@@ -7,8 +7,6 @@ limitPromise.then((result) => {
     var rankLimit = Number(result.redditLimit);
     for (var i = 0; i < rankNodes.length; i++) {
 	var rank = Number(rankNodes[i].innerHTML);
-	console.log(rank);
-	console.log(rankLimit);
 	if (isNaN(rank) || rank > rankLimit) {
 	    rankNodes[i].parentNode.setAttribute("hidden", "");
 	}
