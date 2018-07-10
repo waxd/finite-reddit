@@ -14,12 +14,12 @@ function filterPosts(rankLimit) {
 
 // Read the Reddit limit from storage.
 var limitPromise = browser.storage.sync.get({
-    'redditLimit': 100
+    "redditLimit": 100
 });
 
 // Read the disabled setting from storage.
 var disabledPromise = browser.storage.sync.get({
-    'finiteRedditDisabled': false
+    "finiteRedditDisabled": false
 });
 
 disabledPromise.then((result) => {

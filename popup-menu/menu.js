@@ -12,14 +12,14 @@ function saveOptions(event) {
 
 function restoreOptions() {
     var limitPromise = browser.storage.sync.get({
-	'redditLimit': 100
+	"redditLimit": 100
     });
     limitPromise.then((result) => {
 	document.querySelector("#reddit-limit").value = result.redditLimit;
     });
 
     var disabledPromise = browser.storage.sync.get({
-	'finiteRedditDisabled': false
+	"finiteRedditDisabled": false
     });
     disabledPromise.then((result) => {
 	document.querySelector("#disable-finite-reddit").checked =
@@ -27,5 +27,5 @@ function restoreOptions() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', restoreOptions);
+document.addEventListener("DOMContentLoaded", restoreOptions);
 document.querySelector("form").addEventListener("submit", saveOptions);
