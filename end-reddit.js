@@ -17,8 +17,17 @@ var limitPromise = browser.storage.sync.get({
     'redditLimit': 100
 });
 
-// Apply the rank limit to the posts on the page.
-limitPromise.then((result) => {
-    var rankLimit = Number(result.redditLimit);
-    filterPosts(rankLimit);
+var disabledPromise = browser.storage.sync.get({
+    'finiteRedditDisabled': false
 });
+
+disabledPromise.then((result) => {
+    if (!result.finiteRedditDisabled) {
+	// Apply the rank limit to the posts on the page.
+	limitPromise.then((result) => {
+	    var rankLimit = Number(result.redditLimit);
+	    filterPosts(rankLimit);
+	});
+    }
+});
+
