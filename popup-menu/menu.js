@@ -1,3 +1,6 @@
+/*
+ * Write the options to storage.
+ */
 function saveOptions(event) {
     browser.storage.sync.set({
 	redditLimit: document.querySelector("#reddit-limit").value
@@ -10,6 +13,9 @@ function saveOptions(event) {
     event.preventDefault();
 }
 
+/*
+ * Read the options from storage and populate the forms with the previous values.
+ */
 function restoreOptions() {
     var limitPromise = browser.storage.sync.get({
 	"redditLimit": 100
@@ -27,5 +33,5 @@ function restoreOptions() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", restoreOptions);
-document.querySelector("form").addEventListener("submit", saveOptions);
+document.addEventListener("DOMContentLoaded", restoreOptions);  // Populate the form on load.
+document.querySelector("form").addEventListener("submit", saveOptions);  // Save the settings when the form is submitted.
