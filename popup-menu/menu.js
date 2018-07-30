@@ -9,8 +9,6 @@ function saveOptions(event) {
     browser.storage.sync.set({
 	finiteRedditDisabled: document.querySelector("#disable-finite-reddit").checked
     });
-    
-    event.preventDefault();
 }
 
 /*
@@ -34,4 +32,4 @@ function restoreOptions() {
 }
 
 document.addEventListener("DOMContentLoaded", restoreOptions);  // Populate the form on load.
-document.querySelector("form").addEventListener("submit", saveOptions);  // Save the settings when the form is submitted.
+document.getElementById("save-button").addEventListener("click", saveOptions);  // Save the settings when the form is submitted.
