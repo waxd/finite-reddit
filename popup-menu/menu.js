@@ -9,6 +9,8 @@ function saveOptions(event) {
     browser.storage.sync.set({
 	finiteRedditDisabled: document.querySelector("#disable-finite-reddit").checked
     });
+    browser.tabs.reload();
+    window.close();
 }
 
 /*
